@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* ======== Base Layout ======== */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; /* Font default Vuetify */
+  background-color: #f9f9f9; /* Warna background global */
+}
+
+/* ======== Container Layout ======== */
+.app-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ======== Text Utilities ======== */
+.text-primary {
+  color: #1976d2; /* Primary color Vuetify */
+}
+
+.text-secondary {
+  color: #424242;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ======== Button Custom ======== */
+.v-btn.custom-btn {
+  background-color: #ff9800 !important; /* Oranye */
+  color: white !important;
+  font-weight: bold;
+}
+
+.v-btn.custom-btn:hover {
+  background-color: #e68900 !important;
+}
+
+/* ======== Table Custom ======== */
+.v-data-table.custom-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.v-data-table.custom-table th {
+  background-color: #1976d2;
+  color: white;
+}
+
+.v-data-table.custom-table td {
+  background-color: white;
+}
+
+/* ======== Card Custom ======== */
+.v-card.custom-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
