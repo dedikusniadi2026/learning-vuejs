@@ -18,6 +18,19 @@ It is designed to be lightweight, scalable, and easy to maintain.
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/dedikusniadi2026/learning-vuejs.git
+cd learning-vuejs
 npm install
+
+## Project Structure
+
+├── src/
+│   ├── assets/        # Static assets
+│   ├── components/    # Vue components
+│   ├── stores/        # Pinia stores
+│   ├── views/         # Page views
+│   ├── App.vue        # Root component
+│   └── main.js        # Entry file
+├── index.html
+├── package.json
+└── tailwind.config.js
