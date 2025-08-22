@@ -10,7 +10,7 @@
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h7v7H3V3zm11 0h7v7h-7V3zM3 14h7v7H3v-7zm11 0h7v7h-7v-7z"/></svg>
       </div>
     </div>
-    <div class="text-xs text-gray-500 mt-2">{{ note }}</div>
+    <div class="text-xs text-green-500 mt-2">{{ note }}</div>
   </div>
 </template>
 

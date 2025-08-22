@@ -10,7 +10,7 @@
 
     <div class="overflow-x-auto">
       <table class="min-w-full text-sm">
-        <thead class="bg-orange-50 text-gray-600">
+        <thead class="bg-orange-200 text-gray-600">
           <tr>
             <th class="px-4 py-3 text-left">No</th>
             <th class="px-4 py-3 text-left">Order ID</th>

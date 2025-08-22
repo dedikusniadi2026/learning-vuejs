@@ -21,20 +21,26 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="bg-white p-4 rounded-2xl shadow"><ActiveUser /></div>
         <div class="bg-white p-4 rounded-2xl shadow"><ConversionRate /></div>
-        <div class="bg-white p-4 rounded-2xl shadow"><TrafficSources /></div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div class="col-span-2 bg-white p-4 rounded-2xl shadow">
-          <RecentOrders />
-        </div>
+      <div class="col-span-2 bg-white p-4 rounded-2xl shadow">
+        <RecentOrders />
+      </div>
+
+      <div class="flex flex-col gap-6">
         <div class="bg-white p-4 rounded-2xl shadow">
           <RecentActivity />
         </div>
+        <div class="bg-white p-4 rounded-2xl shadow">
+          <TrafficSources />
+        </div>
       </div>
+    </div>
+
     </div>
 </template>
 

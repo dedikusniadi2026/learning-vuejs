@@ -1,91 +1,94 @@
 <template>
   <div>
+    <!-- Add Product Button -->
     <button
       @click="open = true"
-      class="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-700"
+      class="px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold rounded-lg shadow hover:from-orange-500 hover:to-orange-700 transition"
     >
-      add Product
+      Add Product
     </button>
 
+    <!-- Modal -->
     <div
       v-if="open"
-      class="fixed inset-0 flex bg-black/30 items-center justify-center"
+      class="fixed inset-0 flex items-center justify-center bg-black/40 z-50 p-4"
     >
-      <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-        <h2 class="text-xl font-bold mb-4">Add Product</h2>
-        <form @submit.prevent="submitForm">
-          <div class="mb-3">
-            <label class="block mb-1 font-medium">Title</label>
+      <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-orange-400 to-orange-600 p-4">
+          <h2 class="text-xl font-bold text-white text-center">Add Product</h2>
+        </div>
+
+        <!-- Form -->
+        <form @submit.prevent="submitForm" class="p-6 space-y-4">
+          <div>
+            <label class="block mb-1 font-medium text-gray-700">Title</label>
             <input
               v-model="form.title"
               type="text"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter product title"
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition"
             />
-            <p v-if="errors.title" class="text-red-600 text-sm mt-1">
-              {{ errors.title }}
-            </p>
+            <p v-if="errors.title" class="text-red-600 text-sm mt-1">{{ errors.title }}</p>
           </div>
 
-          <div class="mb-3">
-            <label class="block mb-1 font-medium">Price</label>
+          <div>
+            <label class="block mb-1 font-medium text-gray-700">Price</label>
             <input
               v-model.number="form.price"
               type="number"
               step="0.01"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter price"
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition"
             />
-            <p v-if="errors.price" class="text-red-600 text-sm mt-1">
-              {{ errors.price }}
-            </p>
+            <p v-if="errors.price" class="text-red-600 text-sm mt-1">{{ errors.price }}</p>
           </div>
 
-          <div class="mb-3">
-            <label class="block mb-1 font-medium">Description</label>
+          <div>
+            <label class="block mb-1 font-medium text-gray-700">Description</label>
             <textarea
               v-model="form.description"
               rows="3"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter description"
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition"
             ></textarea>
-            <p v-if="errors.description" class="text-red-600 text-sm mt-1">
-              {{ errors.description }}
-            </p>
+            <p v-if="errors.description" class="text-red-600 text-sm mt-1">{{ errors.description }}</p>
           </div>
 
-          <div class="mb-3">
-            <label class="block mb-1 font-medium">Category</label>
+          <div>
+            <label class="block mb-1 font-medium text-gray-700">Category</label>
             <input
               v-model="form.category"
               type="text"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter category"
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition"
             />
-            <p v-if="errors.category" class="text-red-600 text-sm mt-1">
-              {{ errors.category }}
-            </p>
+            <p v-if="errors.category" class="text-red-600 text-sm mt-1">{{ errors.category }}</p>
           </div>
 
-          <div class="mb-5">
-            <label class="block mb-1 font-medium">Image URL</label>
+          <div>
+            <label class="block mb-1 font-medium text-gray-700">Image URL</label>
             <input
               v-model="form.image"
               type="url"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter image URL"
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition"
             />
-            <p v-if="errors.image" class="text-red-600 text-sm mt-1">
-              {{ errors.image }}
-            </p>
+            <p v-if="errors.image" class="text-red-600 text-sm mt-1">{{ errors.image }}</p>
           </div>
 
-          <div class="flex justify-end space-x-2">
+          <!-- Buttons -->
+          <div class="flex justify-end gap-3 pt-2">
             <button
               type="button"
               @click="closeModal"
-              class="px-4 py-2 rounded border border-gray-300 hover:bg-gray-100"
+              class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
             >
-              cancel
+              Cancel
             </button>
             <button
               type="submit"
-              class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+              class="px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-600 text-white rounded-lg font-semibold shadow hover:from-orange-500 hover:to-orange-700 transition"
             >
               Submit
             </button>
@@ -98,8 +101,7 @@
 
 <script setup>
 import { reactive, ref } from "vue";
-import { toast } from 'vue3-toastify'; 
-
+import { toast } from 'vue3-toastify';
 
 const open = ref(false);
 
@@ -124,61 +126,24 @@ const error = ref(null);
 
 function validate() {
   let isValid = true;
+  for (const key in errors) errors[key] = "";
 
-  for (const key in errors) {
-    errors[key] = "";
-  }
-
-  if (!form.title.trim()) {
-    errors.title = "Title wajib diisi.";
-    isValid = false;
-  }
-
-  if (form.price === null || form.price <= 0) {
-    errors.price = "Price harus lebih dari 0.";
-    isValid = false;
-  }
-
-  if (!form.description.trim()) {
-    errors.description = "Description wajib diisi.";
-    isValid = false;
-  }
-
-  if (!form.category.trim()) {
-    errors.category = "Category wajib diisi.";
-    isValid = false;
-  }
-
-  if (!form.image.trim()) {
-    errors.image = "Image URL wajib diisi.";
-    isValid = false;
-  } else {
-    try {
-      new URL(form.image);
-    } catch {
-      errors.image = "Format URL tidak valid.";
-      isValid = false;
-    }
+  if (!form.title.trim()) { errors.title = "Title wajib diisi."; isValid = false; }
+  if (form.price === null || form.price <= 0) { errors.price = "Price harus lebih dari 0."; isValid = false; }
+  if (!form.description.trim()) { errors.description = "Description wajib diisi."; isValid = false; }
+  if (!form.category.trim()) { errors.category = "Category wajib diisi."; isValid = false; }
+  if (!form.image.trim()) { errors.image = "Image URL wajib diisi."; isValid = false; }
+  else {
+    try { new URL(form.image); } catch { errors.image = "Format URL tidak valid."; isValid = false; }
   }
 
   return isValid;
 }
 
 async function submitForm() {
-  error.value = null;
-  response.value = null;
+  if (!validate()) return;
 
-  if (!validate()) {
-    return;
-  }
-
-  const product = {
-    title: form.title,
-    price: form.price,
-    description: form.description,
-    category: form.category,
-    image: form.image,
-  };
+  const product = { ...form };
 
   try {
     const res = await fetch("https://fakestoreapi.com/products", {
@@ -186,24 +151,13 @@ async function submitForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),
     });
+    if (!res.ok) throw new Error(`Server error: ${res.status}`);
+    response.value = await res.json();
 
-    if (!res.ok) {
-      throw new Error(`Server error: ${res.status}`);
-    }
+    toast.success('Data saved successfully!', { position: toast.POSITION.TOP_RIGHT, autoClose: 3000 });
 
-    const data = await res.json();
-    response.value = data;
-
-      toast.success('Data berhasil disimpan!', {
-    position: toast.POSITION.TOP_RIGHT,
-    autoClose: 3000
-  });
-
-    form.title = "";
-    form.price = null;
-    form.description = "";
-    form.category = "";
-    form.image = "";
+    // reset form
+    Object.keys(form).forEach(key => form[key] = key === 'price' ? null : "");
     open.value = false;
   } catch (err) {
     error.value = err.message;
@@ -212,17 +166,9 @@ async function submitForm() {
 
 function closeModal() {
   open.value = false;
+  Object.keys(form).forEach(key => form[key] = key === 'price' ? null : "");
+  Object.keys(errors).forEach(key => errors[key] = "");
   error.value = null;
   response.value = null;
-
-  form.title = "";
-  form.price = null;
-  form.description = "";
-  form.category = "";
-  form.image = "";
-
-  for (const key in errors) {
-    errors[key] = "";
-  }
 }
 </script>

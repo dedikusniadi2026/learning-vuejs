@@ -159,7 +159,7 @@ const routeName = computed(()=> route.name)
 const menu = [
   { name: 'Dashboard', icon: 'grid', routeName: 'Dashboard', path: '/dashboard' },
   { name: 'Products', icon: 'box', routeName: 'Products', path: '/products' },
-  {name:'Users', icon:'box', routeName:'Users', path: '/users'}
+  {name:'Users', icon:'users', routeName:'Users', path: '/users'}
 ]
 
 function go(item) {

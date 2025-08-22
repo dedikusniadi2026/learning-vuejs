@@ -83,7 +83,7 @@ async function submitForm() {
     resetForm();
     open.value = false;
 
-      toast.success('Data berhasil disimpan!', {
+      toast.success('data saved successfully!', {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: 3000
   });
@@ -134,98 +134,61 @@ async function openEditModal(id) {
 </script>
 
 
-<template>
+ <template>
   <div>
     <button
       @click="openEditModal(1)"
-      class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
-      edit
+      class="px-3 py-1 bg-blue-500 text-white rounded-full text-xs font-medium hover:bg-blue-600 transition">
+      Edit
     </button>
 
-    <div
-      v-if="open"
-      class="fixed inset-0 flex bg-black/30 items-center justify-center">
-      <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-        <h2 class="text-xl font-bold mb-4">Edit Product</h2>
-       <form @submit.prevent="submitForm">
-          <div class="mb-3">
+    <div v-if="open" class="fixed inset-0 flex items-center justify-center bg-black/40 z-50 p-4">
+      <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden">
+
+        <div class="bg-gradient-to-r from-orange-400 to-orange-600 p-5">
+          <h2 class="text-xl font-bold text-white text-center">Edit Product</h2>
+        </div>
+
+        <form @submit.prevent="submitForm" class="p-6 space-y-4">
+          <div>
             <label class="block mb-1 font-medium">Title</label>
-            <input
-              v-model="form.title"
-              type="text"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <p v-if="errors.title" class="text-red-600 text-sm mt-1">
-              {{ errors.title }}
-            </p>
+            <input v-model="form.title" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            <p v-if="errors.title" class="text-red-600 text-sm mt-1">{{ errors.title }}</p>
           </div>
 
-          <div class="mb-3">
+          <div>
             <label class="block mb-1 font-medium">Price</label>
-            <input
-              v-model.number="form.price"
-              type="number"
-              step="0.01"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <p v-if="errors.price" class="text-red-600 text-sm mt-1">
-              {{ errors.price }}
-            </p>
+            <input v-model.number="form.price" type="number" step="0.01" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            <p v-if="errors.price" class="text-red-600 text-sm mt-1">{{ errors.price }}</p>
           </div>
 
-          <div class="mb-3">
+          <div>
             <label class="block mb-1 font-medium">Description</label>
-            <textarea
-              v-model="form.description"
-              rows="3"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            ></textarea>
-            <p v-if="errors.description" class="text-red-600 text-sm mt-1">
-              {{ errors.description }}
-            </p>
+            <textarea v-model="form.description" rows="3" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <p v-if="errors.description" class="text-red-600 text-sm mt-1">{{ errors.description }}</p>
           </div>
 
-          <div class="mb-3">
+          <div>
             <label class="block mb-1 font-medium">Category</label>
-            <input
-              v-model="form.category"
-              type="text"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <p v-if="errors.category" class="text-red-600 text-sm mt-1">
-              {{ errors.category }}
-            </p>
+            <input v-model="form.category" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            <p v-if="errors.category" class="text-red-600 text-sm mt-1">{{ errors.category }}</p>
           </div>
 
-          <div class="mb-5">
+          <div>
             <label class="block mb-1 font-medium">Image URL</label>
-            <input
-              v-model="form.image"
-              type="url"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <p v-if="errors.image" class="text-red-600 text-sm mt-1">
-              {{ errors.image }}
-            </p>
+            <input v-model="form.image" type="url" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            <p v-if="errors.image" class="text-red-600 text-sm mt-1">{{ errors.image }}</p>
           </div>
 
-          <div class="flex justify-end space-x-2">
-            <button
-              type="button"
-              @click="closeModal"
-              class="px-4 py-2 rounded border border-gray-300 hover:bg-gray-100"
-            >
-              cancel
-            </button>
-            <button
-              type="submit"
-              class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-              Submit
-            </button>
+          <div class="flex justify-end space-x-3 pt-4">
+            <button type="button" @click="closeModal" class="px-4 py-2 rounded border border-gray-300 hover:bg-gray-100 transition">Cancel</button>
+            <button type="submit" class="px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-600 text-white rounded-lg font-semibold shadow hover:from-orange-500 hover:to-orange-700 transition">Submit</button>
           </div>
+
         </form>
       </div>
     </div>
   </div>
 </template>
+
+
