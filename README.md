@@ -21,3 +21,27 @@ Clone the repository and install dependencies:
 git clone https://github.com/dedikusniadi2026/learning-vuejs.git
 cd learning-vuejs
 npm install
+
+
+## Running the Project
+Start the development server:
+
+```bash
+npm run dev
+
+## Build for production:
+```bash
+npm run build
+
+## Project Structure
+```bash
+├── src/
+│   ├── assets/        # Static assets
+│   ├── components/    # Vue components
+│   ├── stores/        # Pinia stores
+│   ├── views/         # Page views
+│   ├── App.vue        # Root component
+│   └── main.js        # Entry file
+├── index.html
+├── package.json
+└── tailwind.config.js
