@@ -2,23 +2,18 @@
   <div>
     <button
       @click="open = true"
-      class="px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold rounded-lg shadow hover:from-orange-500 hover:to-orange-700 transition"
-    >
+      class="px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold rounded-lg shadow hover:from-orange-500 hover:to-orange-700 transition">
       Add Users
     </button>
-
-    <!-- Modal -->
     <div
       v-if="open"
       class="fixed inset-0 flex bg-black/40 items-center justify-center z-50"
     >
       <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden">
-        <!-- Header -->
         <div class="bg-gradient-to-r from-orange-400 to-orange-600 p-4">
           <h2 class="text-xl font-bold text-white">Add User</h2>
         </div>
 
-        <!-- Form Body -->
         <form @submit.prevent="submitForm" class="p-6 space-y-4">
           <div>
             <label class="block mb-1 font-medium text-gray-700">Username</label>
@@ -75,7 +70,6 @@
             <p v-if="errors.phone" class="text-red-600 text-sm mt-1">{{ errors.phone }}</p>
           </div>
 
-          <!-- Buttons -->
           <div class="flex justify-end space-x-3 pt-2">
             <button
               type="button"
@@ -180,7 +174,6 @@ async function submitForm() {
 
     toast.success('Data saved successfully!', { position: toast.POSITION.TOP_RIGHT, autoClose: 3000 });
 
-    // Reset form
     Object.keys(form).forEach(key => form[key] = "");
     open.value = false;
   } catch (err) {

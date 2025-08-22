@@ -7,8 +7,13 @@
       </div>
 
       <nav class="px-3 py-4 space-y-1 flex-1">
-        <SidebarItem v-for="i in menu" :key="i.name" :item="i" :active="routeName === i.routeName" @go="go"/>
-      </nav>
+<SidebarItem
+  v-for="i in menu"
+  :key="i.name"
+  :item="i"
+  :active="routeName === i.routeName"
+  @go="go"
+/>      </nav>
 
     </aside>
 
@@ -157,12 +162,14 @@ const route = useRoute()
 const routeName = computed(()=> route.name)
 
 const menu = [
-  { name: 'Dashboard', icon: 'grid', routeName: 'Dashboard', path: '/dashboard' },
-  { name: 'Products', icon: 'box', routeName: 'Products', path: '/products' },
-  {name:'Users', icon:'users', routeName:'Users', path: '/users'}
+  { name: 'Dashboard', icon: 'grid', routeName: 'DashboardHome', path: '/dashboard' },
+  { name: 'Products', icon: 'box', routeName: 'Product', path: '/products' },
+  { name: 'Users', icon: 'users', routeName: 'Users', path: '/users' }
 ]
 
+
 function go(item) {
-  router.push(item.path)
+  router.push({ name: item.routeName }) 
 }
+
 </script>

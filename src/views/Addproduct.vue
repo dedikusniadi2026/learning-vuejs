@@ -1,25 +1,20 @@
 <template>
   <div>
-    <!-- Add Product Button -->
     <button
       @click="open = true"
-      class="px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold rounded-lg shadow hover:from-orange-500 hover:to-orange-700 transition"
-    >
+      class="px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold rounded-lg shadow hover:from-orange-500 hover:to-orange-700 transition">
       Add Product
     </button>
 
-    <!-- Modal -->
     <div
       v-if="open"
       class="fixed inset-0 flex items-center justify-center bg-black/40 z-50 p-4"
     >
       <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden">
-        <!-- Header -->
         <div class="bg-gradient-to-r from-orange-400 to-orange-600 p-4">
           <h2 class="text-xl font-bold text-white text-center">Add Product</h2>
         </div>
 
-        <!-- Form -->
         <form @submit.prevent="submitForm" class="p-6 space-y-4">
           <div>
             <label class="block mb-1 font-medium text-gray-700">Title</label>
@@ -77,7 +72,6 @@
             <p v-if="errors.image" class="text-red-600 text-sm mt-1">{{ errors.image }}</p>
           </div>
 
-          <!-- Buttons -->
           <div class="flex justify-end gap-3 pt-2">
             <button
               type="button"
