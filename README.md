@@ -1,5 +1,23 @@
-# Vue 3 + Vite
+# My Vue Project
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![Vue.js](https://img.shields.io/badge/Vue.js-3.5.18-42b883?logo=vue.js&logoColor=white)
+![Pinia](https://img.shields.io/badge/Pinia-Store-yellow?logo=vue.js&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38b2ac?logo=tailwind-css&logoColor=white)
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 📌 Overview
+This project is built with **Vue.js 3.5.18**, using **Pinia** for state management and **Tailwind CSS 4** for styling.  
+It is designed to be lightweight, scalable, and easy to maintain.
+
+## 🚀 Tech Stack
+- [Vue.js 3.5.18](https://vuejs.org/) – Progressive JavaScript framework  
+- [Pinia](https://pinia.vuejs.org/) – State management for Vue  
+- [Tailwind CSS 4](https://tailwindcss.com/) – Utility-first CSS framework  
+
+## ⚙️ Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+npm install
